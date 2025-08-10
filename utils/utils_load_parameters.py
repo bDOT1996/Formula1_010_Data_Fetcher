@@ -1,6 +1,3 @@
-"""
-Zawiera konfigurację API i ścieżki do zapisania danych
-"""
 import logging
 import os
 import json

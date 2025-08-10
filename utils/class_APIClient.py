@@ -104,7 +104,6 @@ class APIClient:
                     else:
                         if not response_json:  # Checks None, [], {} - all falsy
                             logger.warning(f"Empty response on attempt {attempt}, parameters={api_data}. Retrying.")
-                            # Continue to retry
                         else:
                             logger.info(f"Successful response on attempt {attempt}.")
                         return response_json
