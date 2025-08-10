@@ -22,12 +22,20 @@ class MeetingsRequestBuilder(APIRequestBuilder):
 
     def get_schema(self):
         return {
-            "meeting_key": "Int64",
             "year": "Int64",
-            "name": "string",
+            "meeting_key": "Int64",
+            "circuit_key": "Int64",
+            "circuit_short_name": "string",
+            "country_code": "string",
+            "country_key": "Int64",
+            "country_name": "string",
+            "date_start": "datetime64[ns, UTC]",
+            "gmt_offset": "string",
             "location": "string",
-            "country": "string",
-            "circuit_name": "string"
+            "meeting_code": "string",
+            "meeting_key": "Int64",
+            "meeting_name": "string",
+            "meeting_official_name": "string"
         }
 
 
@@ -43,11 +51,20 @@ class SessionsRequestBuilder(APIRequestBuilder):
 
     def get_schema(self):
         return {
+            "year": "Int64",
             "meeting_key": "Int64",
-            "session_name": "string",
-            "session_type": "string",
+            "session_key": "Int64",
+            "circuit_key": "Int64",
+            "circuit_short_name": "string",
+            "country_code": "string",
+            "country_key": "Int64",
+            "country_name": "string",
+            "date_end": "datetime64[ns, UTC]",
             "date_start": "datetime64[ns, UTC]",
-            "date_end": "datetime64[ns, UTC]"
+            "gmt_offset": "string",
+            "location": "string",
+            "session_name": "string",
+            "session_type": "string"
         }
 
 
@@ -354,16 +371,3 @@ class LocationRequestBuilder(APIRequestBuilder):
             "y": "float64",
             "z": "float64"
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
