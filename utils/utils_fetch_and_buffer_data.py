@@ -27,7 +27,6 @@ def fetch_and_buffer_data(
         buffer_size (int, optional): Number of rows to buffer before writing to Snowflake. Defaults to 1000.
     """
     
-    # Load parameters and initialize connections
     parameters = get_parameters(input_path=param_file_path)
     method = parameters["method"]
     param_list = parameters["params"]
@@ -70,7 +69,7 @@ def fetch_and_buffer_data(
                 sub_params['date_end'] = next_end.isoformat()
                 sub_requests.append(sub_params)
                 current = next_end
-            return sub_requests or [param_entry]  # Fallback if no sub-requests
+            return sub_requests or [param_entry]
         except ValueError as e:
             logger.error(f"Error parsing dates in param_entry: {param_entry}. Error: {e}")
             return [param_entry]
@@ -119,7 +118,6 @@ def fetch_and_buffer_data(
 
             sleep(2)
 
-    # Write remaining buffer data
     if not buffer.empty:
         logger.info(f"Writing remaining {len(buffer)} rows to Snowflake...")
         write_to_snowflake(df=buffer, conn_params=snowflake_conn_params, table_name=table_name)

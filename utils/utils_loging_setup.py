@@ -17,7 +17,8 @@ def setup_logging(log_mode="console"):
     logger.handlers.clear()
 
     # Format logów
-    log_format = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    #log_format = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    log_format = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 
     # Konfiguracja handlerów na podstawie trybu
     if log_mode == "console" or log_mode == "both":

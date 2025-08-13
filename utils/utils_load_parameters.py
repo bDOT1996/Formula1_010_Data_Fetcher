@@ -4,9 +4,7 @@ import json
 import sys
 from pathlib import Path
 from dotenv import load_dotenv
-#import snowflake.connector
 
-# Inicjalizacja loggera
 logger = logging.getLogger(__name__)
 
 load_dotenv()  # załaduj .env

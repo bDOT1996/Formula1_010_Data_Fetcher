@@ -55,10 +55,9 @@ class APIClient:
 
         schema = builder.get_schema()
 
-        # Log for debugging
         logger.debug(f"API response from {endpoint}: {response_json}")
 
-        if not response_json:  # Handle empty response
+        if not response_json:
             logger.warning(f"Empty API response from {endpoint}, returning empty DataFrame with schema.")
             df = pd.DataFrame(columns=schema.keys()).astype(schema)
         else:
@@ -102,7 +101,7 @@ class APIClient:
                         logger.error(f"Invalid JSON on attempt {attempt}: {exc}")
                         # Continue to retry
                     else:
-                        if not response_json:  # Checks None, [], {} - all falsy
+                        if not response_json:
                             logger.warning(f"Empty response on attempt {attempt}, parameters={api_data}. Retrying.")
                         else:
                             logger.info(f"Successful response on attempt {attempt}.")
