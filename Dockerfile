@@ -18,7 +18,7 @@ COPY input/ ./input/
 
 # Ustawienie logów - mają wyświetlać się natychmiast, nie po zakończeniu procesów
 ENV PYTHONUNBUFFERED=1
+ENV PYTHONPATH=/app
 
-# Domyślny punkt wejścia — można nadpisać przez CMD
 #ENTRYPOINT ["python", "-u", "fetcher.py"]
 ENTRYPOINT ["python", "run.py"]

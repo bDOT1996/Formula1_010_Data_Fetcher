@@ -6,7 +6,7 @@ import pandas as pd
 import time
 import logging
 
-from class_APIRequestBuilder import *
+from .class_APIRequestBuilder import *
 
 # Initialize logger
 logger = logging.getLogger(__name__)

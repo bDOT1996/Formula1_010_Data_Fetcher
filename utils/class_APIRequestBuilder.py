@@ -126,20 +126,15 @@ class SessionResultRequestBuilder(APIRequestBuilder):
             "meeting_key": "Int64",
             "session_key": "Int64",
             "driver_number": "Int64",
-
-            "grid_position": "Int64",
-            "lap_duration": "float64",
-            "position": "Int64",
     
             "dnf": "boolean",
             "dns": "boolean",
             "dsq": "boolean",
             
-            "duration": "float64",
-
+            "duration": "object",
             "gap_to_leader": "object",
-            "number_of_laps": "object",
             
+            "number_of_laps": "Int64",
             "position": "Int64"
             
         }

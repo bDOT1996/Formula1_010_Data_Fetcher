@@ -5,9 +5,9 @@ import pandas as pd
 from datetime import datetime, timedelta
 from time import sleep
 
-from class_APIClient import APIClient
-from utils_load_parameters import get_snowflake_connection, get_parameters
-from utils_write_to_snowflake import write_to_snowflake
+from .class_APIClient import APIClient
+from .utils_load_parameters import get_snowflake_connection, get_parameters
+from .utils_write_to_snowflake import write_to_snowflake
 
 # Inicjalizacja loggera
 logger = logging.getLogger(__name__)
