@@ -78,17 +78,22 @@ def fetch_and_buffer_data(
     def write_buffer_if_full() -> None:
         """
         Write buffer to Snowflake if it reaches the buffer size and reset buffer.
+        # is memory size 
         """
         nonlocal buffer, file_idx
+        #buffer_memory_size = buffer.memory_usage(deep=True).sum() / (1024 * 1024) # Mb
         if len(buffer) >= buffer_size:
+            print(df)
             logger.info(f"Buffer reached {buffer_size} rows. Writing to Snowflake...")
             write_to_snowflake(
                 df = buffer.iloc[:buffer_size],
+                #df = buffer,
                 conn_params = snowflake_conn_params,
                 table_name = table_name
             )
             logger.info(f"Chunk {file_idx} written to Snowflake ({buffer_size} rows).")
             buffer = buffer.iloc[buffer_size:].reset_index(drop=True)
+            #buffer = buffer.iloc[0:0].reset_index(drop=True)  
             file_idx += 1
             
         

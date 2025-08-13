@@ -131,9 +131,9 @@ class SessionResultRequestBuilder(APIRequestBuilder):
             "dns": "boolean",
             "dsq": "boolean",
             
-            "duration": "object",
+            "duration": "string",
             "gap_to_leader": "object",
-            
+
             "number_of_laps": "Int64",
             "position": "Int64"
             
@@ -150,7 +150,6 @@ class StartingGridRequestBuilder(APIRequestBuilder):
             "meeting_key": "Int64",
             "session_key": "Int64",
             "driver_number": "Int64",
-            "grid_position": "Int64",
             "lap_duration": "float64",
             "position": "Int64"
         }
@@ -188,7 +187,7 @@ class TeamRadioRequestBuilder(APIRequestBuilder):
             "meeting_key": "Int64",
             "driver_number": "Int64",
             "date": "datetime64[ns, UTC]",
-            "message": "string"
+            "recording_url": "string"
         }
 
 class WeatherRequestBuilder(APIRequestBuilder):
