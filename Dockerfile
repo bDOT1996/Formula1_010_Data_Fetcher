@@ -8,8 +8,8 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Kopiowanie kodu źródłowego (logika fetchera)
-COPY f1_data_fetcher/ ./f1_data_fetcher/
-COPY fetcher.py .
+#COPY f1_data_fetcher/ ./f1_data_fetcher/
+#COPY fetcher.py .
 
 COPY utils/ ./utils/
 COPY .env .
@@ -20,4 +20,4 @@ ENV PYTHONUNBUFFERED=1
 
 # Domyślny punkt wejścia — można nadpisać przez CMD
 #ENTRYPOINT ["python", "-u", "fetcher.py"]
-ENTRYPOINT ["python", "utils/run.py"]
+ENTRYPOINT ["python", "run.py"]
