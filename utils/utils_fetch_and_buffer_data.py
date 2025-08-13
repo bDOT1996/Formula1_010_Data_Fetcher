@@ -83,7 +83,6 @@ def fetch_and_buffer_data(
         nonlocal buffer, file_idx
         #buffer_memory_size = buffer.memory_usage(deep=True).sum() / (1024 * 1024) # Mb
         if len(buffer) >= buffer_size:
-            print(df)
             logger.info(f"Buffer reached {buffer_size} rows. Writing to Snowflake...")
             write_to_snowflake(
                 df = buffer.iloc[:buffer_size],
