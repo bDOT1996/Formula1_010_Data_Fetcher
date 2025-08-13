@@ -12,6 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 #COPY fetcher.py .
 
 COPY utils/ ./utils/
+COPY run.py .
 COPY .env .
 COPY input/ ./input/
 
