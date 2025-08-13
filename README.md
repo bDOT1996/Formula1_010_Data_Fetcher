@@ -35,7 +35,7 @@ This repository contains a Python-based application that processes data using pa
    }
    ```
 4. **Snowflake**: Ensure a warehouse, database, and schema are created in Snowflake. The pipeline will handle table creation automatically.
-5. Build and run the Docker container - its automaticli run:
+5. Build and run the Docker container - it automatically runs:
    ```bash
    docker-compose up --build
    ```
@@ -66,7 +66,7 @@ This repository contains a Python-based application that processes data using pa
 ```
 
 
-## Future Plans (in other repos Forlmula1_*)
+## Future Plans (in other repos Formula1_*)
 - Deploy the pipeline to a cloud environment.
 - Integrate with Airflow for automated DAG execution.
 - Add DBT for data transformation and modeling.
