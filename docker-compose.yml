@@ -7,7 +7,7 @@ services:
     # gdzie mają trafić logi -dla pliku: 'file', dla obu 'both' 
       - LOG_MODE=console
     #  - PYTHONUNBUFFERED=1
-    image: f1_data_fetcher
+    image: Formula1_010_Data_Fetcher
     volumes:
       - ./input:/app/input
     env_file:
